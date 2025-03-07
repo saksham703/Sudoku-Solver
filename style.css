@@ -1,0 +1,381 @@
+body {
+	font-family: Arial, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 0px;
+  }
+  
+  .sudoku-board {
+	display: grid;
+	grid-template-columns: repeat(9, 40px);
+	grid-gap: 2px;
+	justify-content: center;  
+	margin-top: 100px;
+	margin-bottom: 20px;
+	}
+  
+  .sudoku-board input {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 18px;
+	border: 1px solid #ccc;
+  }
+  
+  .sudoku-board input:focus {
+	outline: 2px solid #4CAF50;
+  }
+  
+  .buttons {
+	margin: 20px 0;
+  }
+  
+  .buttons button {
+	padding: 10px 15px;
+	margin: 0 5px;
+	font-size: 16px;
+	cursor: pointer;
+  }
+  
+
+  /* Light Mode Styles */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* body.dark-mode .sudoku-board input{
+	color: white;
+} */
+
+
+/* General Header Styles */
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Default Light Mode Color */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-sizing: content-box;
+   flex-wrap: wrap;
+}
+
+/* Dark Mode Background */
+body.dark-mode .header {
+    background-color:#4CAF50;
+}
+
+/* App Title Styles */
+.app-title {
+    font-size: 2vw;
+    /* margin: 0 auto; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+/* Navigation Links Styles */
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: rgb(234, 255, 0);
+    font-size: 1vw;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Light/Dark Mode Toggle Button */
+.theme-toggle {
+    background-color: #6e827d; 
+    color: white;
+    border: none;
+	/* border-radius: 50%; */
+    font-size: 1.3vw;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+	margin-top: 50px;
+}
+
+/* .theme-toggle:hover {
+  
+} */
+
+
+body.dark-mode .sudoku-board input{
+color: #A9A9A9;
+}
+
+
+
+/* Connect Button */
+.connect-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for connect icon */
+.connect-icon {
+	border-radius: 26.5px;
+    background-color: #45a049;
+    border: 1px solid #45a049;
+    box-shadow: 0 16px 22px -17px #03153B;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2vw;
+    line-height: 20px;
+    padding: 12px 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+.connect-icon:hover {
+    background-color: #45a049;
+}
+
+/* Modal Background */
+.social-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+	position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 999;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 1.5vw;
+    color: #333;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+/* Close Button */
+.close-modal {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1vw;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-modal:hover {
+    background-color: #ff4c33;
+}
+
+/* Modal Styles */
+.modal-sudoku {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content-sudoku {
+	color: black;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.close-modal-sudoku {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal-sudoku:hover,
+.close-modal-sudoku:focus {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* Media Query for Laptops */
+@media (max-width: 1200px) {
+	.app-title {
+
+	}
+  
+	.sudoku-board {
+	  grid-template-columns: repeat(9, 35px); /* Adjust cell size */
+	  grid-gap: 2px;
+	}
+  
+	.sudoku-board input {
+	  width: 35px;
+	  height: 35px;
+	  font-size: 16px;
+	}
+  
+	.header {
+	  padding: 5px 10px; /* Reduce padding */
+	}
+  
+  }
+  
+  /* Media Query for Tablets */
+  @media (max-width: 768px) {
+	.app-title {
+	
+	}
+  
+	.sudoku-board {
+	  grid-template-columns: repeat(9, 30px); /* Adjust cell size */
+	  grid-gap: 2px;
+	}
+  
+	.sudoku-board input {
+	  width: 30px;
+	  height: 30px;
+	  font-size: 14px;
+	}
+  
+	.header {
+    padding: 2px 5px; /* Stack header items */
+
+	}
+  
+	.nav-links {
+	  flex-wrap: wrap;
+	  justify-content: center;
+	}
+  
+	.nav-link {
+	  padding: 5px 8px;
+	}
+  
+	.connect-icon {
+	  padding: 10px 15px;
+	}
+  }
+  
+  /* Media Query for Mobile Devices */
+  @media (max-width: 480px) {
+	.app-title {
+    font-size: 4vw;
+	}
+  
+	.sudoku-board {
+	  grid-template-columns: repeat(9, 25px); /* Adjust cell size */
+	  grid-gap: 1px;
+	  margin-top: 50px; /* Reduce margin */
+	}
+  
+	.sudoku-board input {
+	  width: 25px;
+	  height: 25px;
+	  font-size: 12px;
+	}
+  
+	.header {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: center;
+    padding: 15px 30px;
+    background-color: #4CAF50; /* Default Light Mode Color */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    box-sizing: content-box;
+   flex-wrap: wrap;
+	}
+  
+	.nav-link {
+	  padding: 5px;
+    font-size: 2vw;
+	}
+  
+	.connect-icon {
+	  padding: 8px 12px;
+	}
+  
+	.modal-content {
+	  width: 60%;
+	  padding: 15px;
+	}
+  }
+  

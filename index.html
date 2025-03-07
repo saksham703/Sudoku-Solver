@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+
+        <!-- Navigation Links -->
+        <nav class="nav-links">
+            <a href="https://sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/" target="_blank" class="nav-link">Learn About Sudoku</a>
+            <a href="https://www.geeksforgeeks.org/sudoku-backtracking-7/" target="_blank" class="nav-link">Backtracking Algorithm</a>
+            <a href="https://en.wikipedia.org/wiki/Sudoku_solving_algorithms" target="_blank" class="nav-link">Sudoku  Algorithms</a>
+        </nav>
+
+        
+        <!-- App Title -->
+        <h1 class="app-title">Sudoku Solver</h1>
+   
+    <button id="theme-toggle" class="theme-toggle"></button>
+</header>
+
+
+<!-- Connect Section -->
+<div class="connect-container">
+    <button id="connect-icon" class="connect-icon">Get in touch 🔗</button>
+    
+    <!-- Modal for Social Links -->
+    <div id="social-modal" class="social-modal hidden">
+        <div class="modal-content">
+            <h2>Connect with Me</h2>
+            <div class="social-icons">
+                <a href="https://github.com/saksham703" target="_blank" class="social-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" />
+                </a>
+                <a href="mailto:ssaksham703@gmail.com" target="_blank" class="social-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="mail" />
+                </a>
+                <a href="https://www.linkedin.com/in/saksham-sharma-432225193/" target="_blank" class="social-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+                </a>
+                <a href="https://leetcode.com/u/saksham8713/" target="_blank" class="social-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" " />
+                </a>                
+            </div>
+            <button id="close-modal" class="close-modal">Close</button>
+        </div>
+    </div>
+</div>
+
+
+
+  <div class="sudoku-board" id="sudoku-board">
+    <!-- The cells will be dynamically generated -->
+  </div>
+
+ 
+
+ 
+
+  <div id="sudoku-container">
+    <div id="sudoku-board" style="display: grid; grid-template-columns: repeat(9, 30px); gap: 5px;"></div>
+    <button id="reset-btn">Reset Board</button>
+    <button id="check-btn">Check Validity</button>
+    <button id="solve-btn">Solve Sudoku</button>
+    <button id="new-game-btn">New Game</button>
+</div>
+
+<!-- Modal Popup -->
+<div id="modal-popup" class="modal-sudoku">
+    <div class="modal-content-sudoku">
+        <!-- <span id="close-modal-sudoku" class="close-modal-sudoku">&times;</span> -->
+        <p id="modal-message"></p>
+        <button id="close-modal-sudoku" class="close-modal">Close</button>
+    </div>
+</div>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
